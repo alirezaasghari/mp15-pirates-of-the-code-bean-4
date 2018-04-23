@@ -1,4 +1,4 @@
-package at.refugeescode.mp15piratesofthecodebean4.model;
+package at.refugeescode.mp15piratesofthecodebean4.controller;
 
 import org.springframework.stereotype.Service;
 
@@ -11,13 +11,10 @@ public class FountainOfYouth {
     private boolean drinkTheTear;
 
     public FountainOfYouth() {
-    }
-
-    public FountainOfYouth(boolean findMermaid, boolean getMermaidTears, boolean findChalice, boolean drinkTheTear) {
-        this.findMermaid = findMermaid;
-        this.getMermaidTears = getMermaidTears;
-        this.findChalice = findChalice;
-        this.drinkTheTear = drinkTheTear;
+        findMermaid = true;
+        getMermaidTears = true;
+        findChalice = true;
+        drinkTheTear = true;
     }
 
     public boolean isFindMermaid() {

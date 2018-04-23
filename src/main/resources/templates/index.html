@@ -14,49 +14,46 @@
 <body>
 <div class="container">
 
-    <h1 class="center-align font-style">Pirates of the Code-Bean #4</h1>
-    <h3 class="center-align font-style purple-text">(On Stranger Tides)</h3>
-    <h4 class="blue-text">
+    <h1 class="center-align my-font">Pirates of the Code-Bean #4</h1>
+    <h3 class="center-align my-font purple-text">(On Stranger Tides)</h3>
+    <h4 class="my-font blue-text">
         Steps of the fountain of youth:
     </h4>
-    <h4>
-        <!--First: Find the mermaid-->
-    </h4>
+
+    <div class="row center-align">
+        <div class="col">
     <form th:action="@{/findMermaid}" th:object="${stepOne}" method="get">
         <button name="action" value="done" type="submit"
                 class="waves-effect waves-light btn-large green lighten-3">Find the mermaid
         </button>
     </form>
-    <h4>
-        <!--Second: Get mermaid's tears-->
-    </h4>
-    <form th:if="${stepOne} == true" th:action="@{/getMermaidTears}" th:object="${stepTwo}" method="get">
-        <button name="action" value="done" type="submit"
+        </div><div class="col">
+
+    <form th:action="@{/getMermaidTears}" th:object="${stepTwo}" method="get">
+        <button name="action" value="done" type="submit" th:disabled="${stepOne}"
                 class="waves-effect waves-light btn-large green lighten-3">Get mermaid's tears
         </button>
     </form>
-    <h4>
-        <!--Third: Find the chalice-->
-    </h4>
-    <form th:if="${stepTwo} == true" th:action="@{/findChalice}" th:object="${stepThree}" method="get">
-        <button name="action" value="done" type="submit"
+    </div><div class="col">
+    <form  th:action="@{/findChalice}" th:object="${stepThree}" method="get">
+        <button name="action" value="done" type="submit" th:disabled="${stepTwo}"
                 class="waves-effect waves-light btn-large green lighten-3">Find the chalice
         </button>
     </form>
-    <h4>
-        <!--Fourth: Drink the tears from the chalice-->
-    </h4>
-    <form th:if="${stepThree} == true" th:action="@{/drinkTheTear}" th:object="${stepFour}" method="get">
-        <button name="action" value="done" type="submit"
+    </div><div class="col">
+    <form th:action="@{/drinkTheTear}" th:object="${stepFour}" method="get">
+        <button name="action" value="done" type="submit" th:disabled="${stepThree}"
                 class="waves-effect waves-light btn-large green lighten-3">Drink the tears from the chalice
         </button>
     </form>
+        </div>
+    </div>
     <h2>
-        <span th:if="${stepFour} == true">
-            <h2 class="center-align font-style green-text" >Congratulations you got Immortality!</h2>
+        <span th:if="${stepFour} == false">
+            <h2 class="center-align my-font green-text" >Congratulations you got Immortality!</h2>
         </span>
     </h2>
 </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </body>
 </html>

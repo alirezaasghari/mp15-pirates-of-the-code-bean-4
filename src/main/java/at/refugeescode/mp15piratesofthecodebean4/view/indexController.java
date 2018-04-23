@@ -1,6 +1,6 @@
 package at.refugeescode.mp15piratesofthecodebean4.view;
 
-import at.refugeescode.mp15piratesofthecodebean4.model.FountainOfYouth;
+import at.refugeescode.mp15piratesofthecodebean4.controller.FountainOfYouth;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,25 +38,25 @@ public class indexController {
 
     @GetMapping("/findMermaid")
     String findMermaid() {
-        fountainOfYouth.setFindMermaid(true);
+        fountainOfYouth.setFindMermaid(false);
         return "redirect:/";
     }
 
     @GetMapping("/getMermaidTears")
     String getMermaidTears() {
-        fountainOfYouth.setGetMermaidTears(true);
+        fountainOfYouth.setGetMermaidTears(false);
         return "redirect:/";
     }
 
     @GetMapping("/findChalice")
     String findChalice() {
-        fountainOfYouth.setFindChalice(true);
+        fountainOfYouth.setFindChalice(false);
         return "redirect:/";
     }
 
     @GetMapping("/drinkTheTear")
     String drinkTheTear() {
-        fountainOfYouth.setDrinkTheTear(true);
+        fountainOfYouth.setDrinkTheTear(false);
         return "redirect:/";
     }
 
